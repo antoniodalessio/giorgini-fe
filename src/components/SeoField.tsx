@@ -11,9 +11,13 @@ const SeoField = (props: any) => {
     const [metadescription, setMetaDescription] = useState('')
   
     useEffect(() => {
-      setMetaTitle(props.record.meta.title)
-      setMetaDescription(props.record.meta.description)
-    },[props.record.meta.title, props.record.meta.description])
+      if (props?.record?.meta && props.record.meta?.title) {
+        setMetaTitle(props.record.meta?.title)
+      }
+      if (props?.record?.meta && props?.record?.meta?.description) {
+        setMetaDescription(props.record.meta.description)
+      }
+    },[props?.record?.meta?.title, props?.record?.meta?.description])
   
     const changeMetaTitle = (text: string) => {
       setMetaTitle(text)

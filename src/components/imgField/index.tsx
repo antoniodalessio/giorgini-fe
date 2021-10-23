@@ -53,9 +53,6 @@ class ImgField extends React.Component<Props, State> {
   render() {
     const { source, sourceName, label, sourceAlt, fieldKey, formData} = this.props
     const { sameNameCheck } = this.state
-
-    console.log("formData", formData)
-    
     
     if (typeof formData != 'undefined' && formData.hasOwnProperty(fieldKey) && typeof formData[fieldKey] == "string") {
       formData.imgName = (' ' + formData[fieldKey]).slice(1)
@@ -89,21 +86,3 @@ class ImgField extends React.Component<Props, State> {
 }
 
 export default ImgField
-
-
-/*
-
-{formData[fieldKey] && formData[fieldKey].rawFile && formData[fieldKey].rawFile.size && 
-          <Box border={1} style={{padding: 10}}>
-            <FormControlLabel
-              control={<Switch  checked={sameNameCheck} onChange={this.toggleChecked.bind(this)} />}
-              label="Stesso nome del file caricato"
-            />
-            <p className="MuiFormLabel-root">
-            Al momento di caricare una nuova immagine è possibile scegliere se usare il nome del file caricato o dargli un nuovo nome
-            </p>
-          </Box>
-        }
-
-
-*/
