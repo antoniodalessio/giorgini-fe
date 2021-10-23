@@ -1,4 +1,4 @@
-const authProvider = {
+const authProvider: any = {
     login: ({ username, password }) =>  {
         const request = new Request(`${process.env.BASE_PATH}authenticate`, {
             method: 'POST',

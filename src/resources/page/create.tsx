@@ -11,6 +11,8 @@ import {
 } from 'react-admin';
 import RichTextInput from 'ra-input-rich-text';
 
+import SeoField from '../../components/SeoField'
+
 
 const PageCreate = (props) => (
     <Create title="Create a Page" {...props}>
@@ -28,10 +30,8 @@ const PageCreate = (props) => (
                 </ArrayInput>
                 <TextInput parse={v => v.replace(" ", "-")} source="slug" validate={required()} fullWidth={true}/>
             </FormTab>
-            <FormTab label="meta">
-                <TextInput source="meta.title" label="meta title"/>
-                <TextInput source="meta.description"label="meta description" fullWidth={true}/>
-                <TextInput source="meta.keywords" label="meta keywords"/>
+            <FormTab label="SEO">
+                <SeoField />
             </FormTab>
         </TabbedForm>
     </Create>
