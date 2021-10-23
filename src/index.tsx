@@ -6,18 +6,18 @@ import dataProvider from './provider/dataProvider';
 import authProvider from './provider/authProvider';
 
 import { 
-    ProductList,
-    ProductEdit,
-    ProductCreate,
-    ProductIcon 
-} from './resources/product/index';
+    ServiceList,
+    ServiceEdit,
+    ServiceCreate,
+    ServiceIcon 
+} from './resources/service/index';
 
 import { 
-    CategoryList,
-    CategoryEdit,
-    CatIcon,
-    CategoryCreate
-} from './resources/category/index';
+    StoryList,
+    StoryEdit,
+    StoryCreate,
+    StoryIcon 
+} from './resources/story/index';
 
 import { 
     PageList,
@@ -34,40 +34,11 @@ import {
 } from './resources/user/index';
 
 import { 
-    CustomerList,
-    CustomerEdit,
-    CustomerIcon,
-    CustomerCreate
-} from './resources/customer/index';
-
-import { 
-    FabricList,
-    FabricEdit,
-    FabricIcon,
-    FabricCreate
-} from './resources/fabric/index';
-
-import { 
-    ReviewList,
-    ReviewEdit,
-    ReviewIcon,
-    ReviewCreate
-} from './resources/review/index';
-
-import { 
-    OrderList,
-    OrderEdit,
-    OrderIcon,
-    OrderCreate
-} from './resources/order/index';
-
-
-import { 
-    SubmissionList,
-    SubmissionShow,
-    SubmissionIcon,
-} from './resources/submission/index';
-
+    CollaboratorList,
+    CollaboratorEdit,
+    CollaboratorIcon,
+    CollaboratorCreate
+} from './resources/collaborator/index';
 
 
 import { 
@@ -81,24 +52,6 @@ render(
         authProvider={authProvider}
     >
         <Resource 
-            name="category"
-            options={{ label: 'Categorie' }}
-            label="Categorie"
-            list={CategoryList}
-            edit={CategoryEdit}
-            create={CategoryCreate}
-            icon={CatIcon}
-            exporter={false}
-        />
-        <Resource 
-            name="product"
-            options={{ label: 'Prodotti' }}
-            list={ProductList}
-            edit={ProductEdit}
-            create={ProductCreate}
-            icon={ProductIcon}
-        />
-        <Resource 
             name="page"
             options={{ label: 'Pagine' }}
             list={PageList}
@@ -107,37 +60,30 @@ render(
             icon={PageIcon}
         />
         <Resource 
-            name="fabric"
-            options={{ label: 'Tessuti' }}
-            list={FabricList}
-            edit={FabricEdit}
-            create={FabricCreate}
-            icon={FabricIcon}
+            name="service"
+            options={{ label: 'Servizi' }}
+            list={ServiceList}
+            edit={ServiceEdit}
+            create={ServiceCreate}
+            icon={ServiceIcon}
         />
         <Resource 
-            name="review"
-            options={{ label: 'Recensioni' }}
-            list={ReviewList}
-            edit={ReviewEdit}
-            create={ReviewCreate}
-            icon={ReviewIcon}
+            name="story"
+            options={{ label: 'Storie' }}
+            list={StoryList}
+            edit={StoryEdit}
+            create={StoryCreate}
+            icon={StoryIcon}
         />
-        <Resource
-            name="customer"
-            options={{ label: 'Clienti' }}
-            list={CustomerList}
-            edit={CustomerEdit}
-            create={CustomerCreate}
-            icon={CustomerIcon}
+        <Resource 
+            name="collaborator"
+            options={{ label: 'Collaboratori' }}
+            list={CollaboratorList}
+            edit={CollaboratorEdit}
+            create={CollaboratorCreate}
+            icon={CollaboratorIcon}
         />
-        <Resource
-            name="submission"
-            options={{ label: 'Richieste info' }}
-            list={SubmissionList}
-            show={SubmissionShow}
-            icon={SubmissionIcon}
-        />
-        <Resource
+        <Resource 
             name="user"
             options={{ label: 'Utenti' }}
             list={UserList}
@@ -145,14 +91,7 @@ render(
             create={UserCreate}
             icon={UserIcon}
         />
-        <Resource
-            name="order"
-            options={{ label: 'Ordini' }}
-            list={OrderList}
-            edit={OrderEdit}
-            create={OrderCreate}
-            icon={OrderIcon}
-        />
+
         <Resource
             name="publish"
             options={{ label: 'Pubblica' }}

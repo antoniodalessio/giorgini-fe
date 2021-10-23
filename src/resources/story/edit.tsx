@@ -24,6 +24,7 @@ export const ProductIcon = BookIcon;
 
 import SortableGridField from '../../components/sortableGridField'
 import Swapper from '../../components/swapper'
+import SeoField from '../../components/SeoField'
 
 
 const ProductTitle = ({record = {title: ''}}) => {
@@ -41,31 +42,20 @@ const Images = (props) => {
 };
 
 
-const ProductEdit = (props) => {
+const StoryEdit = (props) => {
 
     return (
       <Edit title={<ProductTitle />} {...props}>
         <TabbedForm>
           <FormTab label="Generali">
-              <BooleanField source="published" />
-              <TextInput source="sku" />
-              <TextInput source="title" />
-              <TextInput source="description" fullWidth={true} multiline={true}/>
-              <RichTextInput source="body" multiline={true} />
-              <Divider />
-              <TextInput source="subtitle" />
-              <RichTextInput source="subbody" />
-              <Divider />
-              <TextInput parse={v => v.replace(" ", "-")} source="slug" validate={required()} fullWidth={true}/>
-              <TextInput source="price" />
-              <DateInput source="priceValidUntil" />
-              <ReferenceInput label="Category" source="category" reference="category">
-                  <SelectInput optionText="category_name" optionValue="_id" validate={required()} />
-              </ReferenceInput>
-              <h6 className="MuiTypography-h6">Meta</h6>
-              <TextInput source="meta.title" label="meta title"/>
-              <TextInput source="meta.description"label="meta description"  fullWidth={true}/>
-              <TextInput source="meta.keywords" label="meta keywords"/>
+                <BooleanField source="published" />
+                <TextInput source="order" />
+                <TextInput source="name" />
+                <TextInput source="text" fullWidth={true} multiline={true}/>
+                <TextInput parse={v => v.replace(" ", "-")} source="slug" validate={required()} fullWidth={true}/>
+          </FormTab>
+          <FormTab label="SEO">
+             <SeoField />
           </FormTab>
           <FormTab label="immagini">
               <ArrayInput source="images">
@@ -82,16 +72,10 @@ const ProductEdit = (props) => {
           <FormTab label="Ordina immagini">
               <Images />
           </FormTab>
-          <FormTab label="Tessuti interni">
-              <Swapper source="fabrics.internal"/>
-          </FormTab>
-          <FormTab label="Tessuti esterni">
-              <Swapper source="fabrics.external"/>
-          </FormTab>
         </TabbedForm>
       </Edit>
     )
 };
 
 
-export default ProductEdit
+export default StoryEdit

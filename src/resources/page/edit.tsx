@@ -12,6 +12,8 @@ import {
 
 import RichTextInput from 'ra-input-rich-text';
 
+import SeoField from '../../components/SeoField'
+
 const PageTitle = ({record }) => {
   return <span>{record.Page_name}</span>;
 };
@@ -39,10 +41,8 @@ class PageEdit extends React.Component {
                 </ArrayInput>
                 <TextInput source="ord" label="ordine" />
               </FormTab>
-              <FormTab label="meta">
-                  <TextInput source="meta.title" label="meta title"/>
-                  <TextInput source="meta.description"label="meta description" fullWidth={true}/>
-                  <TextInput source="meta.keywords" label="meta keywords"/>
+              <FormTab label="SEO">
+                <SeoField />
               </FormTab>
           </TabbedForm>
         </Edit>

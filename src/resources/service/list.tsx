@@ -18,21 +18,18 @@ const ProductFilter = props => (
     </Filter>
 );
 
-const ProductList = (props) => (
+const ServiceList = (props) => (
     <List {...props } exporter={false} filters={<ProductFilter />}>
         <Datagrid>
             <BooleanField source="published" />
-            <TextField source="sku" />
+            <TextField source="order" />
             <TextField source="title" />
             <TextField source="slug" />
-            <TextField source="price" />
-            <ReferenceField label="Category" source="category" reference="category">
-                <ChipField source="category_name" />
-            </ReferenceField>
-            <EditButton basePath="/product" />
+            <TextField source="icon" />
+            <EditButton basePath="/service" />
         </Datagrid>
     </List>
 );
 
 
-export default ProductList
+export default ServiceList
